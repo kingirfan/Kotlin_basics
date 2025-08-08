@@ -2,7 +2,7 @@ package com.example.kotlin_basics.kotlin_basics
 
 import com.example.kotlin_basics.kotlin_basics.classes.Dog
 
-data class  CoffeeDetails(val sugarCount : Int,val name : String, val size : Int, val creamAmount : Int)
+data class CoffeeDetails(val sugarCount: Int, val name: String, val size: Int, val creamAmount: Int)
 
 fun main() {
 
@@ -17,19 +17,19 @@ fun main() {
 //    println(maths())
 
 //    constructorCall()
-  val coffeeDetails = CoffeeDetails(0,"irfan",12,0)
+    val coffeeDetails = CoffeeDetails(1, "irfan", 12, 0)
     makeCoffee(coffeeDetails)
 
 }
 
-fun constructorCall(){
+fun constructorCall() {
     println("Enter the name")
     val nameIs = readln()
 
     println("Enter the bread")
     val breedIs = readln()
 
-    val  dogClass = Dog(nameIs, breedIs)
+    val dogClass = Dog(nameIs, breedIs)
 
     println(dogClass.name)
     println(dogClass.breed)
