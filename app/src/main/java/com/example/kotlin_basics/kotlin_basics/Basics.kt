@@ -4,6 +4,8 @@ import com.example.kotlin_basics.kotlin_basics.classes.Dog
 
 data class CoffeeDetails(val sugarCount: Int, val name: String, val size: Int, val creamAmount: Int)
 
+data class Vase(val color : String, val name : String)
+
 fun main() {
 
 //    print("Enter the Age")
@@ -17,8 +19,14 @@ fun main() {
 //    println(maths())
 
 //    constructorCall()
-    val coffeeDetails = CoffeeDetails(1, "irfan", 12, 0)
-    makeCoffee(coffeeDetails)
+//    val coffeeDetails = CoffeeDetails(1, "irfan", 12, 0)
+//    makeCoffee(coffeeDetails)
+
+    var firstName = Vase(name = "Irfan", color = "Shariff")
+    var secondName = firstName.copy(name = "Irfuu")
+
+    println(firstName)
+    println(secondName)
 
 }
 
