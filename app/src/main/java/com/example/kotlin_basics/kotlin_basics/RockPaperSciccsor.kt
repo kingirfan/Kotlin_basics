@@ -1,4 +1,4 @@
-package com.example.kotlin_basics
+package com.example.kotlin_basics.kotlin_basics
 
 fun main() {
     var enterChoice = 0
