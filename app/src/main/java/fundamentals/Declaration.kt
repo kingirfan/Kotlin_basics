@@ -21,8 +21,49 @@ class Employee(val name: String, val id: Int) {
         return false
     }
 
+
     override fun toString(): String {
         return "Employee(id=$id, name=$name)"
     }
 
+    override fun hashCode(): Int {
+        var result = id
+        result = 31 * result + name.hashCode()
+        return result
+    }
+
 }
+
+sealed class Result
+data class Success(val data: String) : Result()
+data class Error(val message: String) : Result()
+object Loading : Result()
+
+fun handle(result: Result) = when (result) {
+    is Success -> println("Data Success")
+    is Error -> println("Data Error")
+    is Loading -> println("Data Error")
+}
+
+fun handle1(result: Result) = when (result) {
+    is Success -> println("Data Success")
+    is Error -> println("Data Error")
+    is Loading -> println("Data Error")
+}
+
+class Utils {
+    companion object {
+        fun printHello() {
+            println("Hello from Companion Object!")
+        }
+
+        val appName = "MyApp"
+    }
+}
+
+
+
+
+
+
+

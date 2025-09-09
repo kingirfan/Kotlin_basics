@@ -9,7 +9,9 @@ fun main() {
 //    findTheLargest()
 //    arrayIsSortedOrNot()
 //    isSortedAscendingOrDesending()
-    twoSums()
+//    twoSums()
+//    missingNumber()
+    maxMin()
 }
 
 
@@ -166,11 +168,81 @@ fun twoSums() {
         }
         mapIs[num] = i
     }
+}
+
+fun missingNumber() {
+    val numbers = listOf(2, 4, 7, 12)
+
+    val maxNumber = numbers.maxOrNull() ?: 0
+
+    val boolList = BooleanArray(maxNumber + 1) { false }
+
+    for (element in numbers) {
+        boolList[element] = true
+    }
+
+    var missingNumber = mutableListOf<Int>()
+
+    for (i in 1 until maxNumber) {
+        if (!boolList[i]) {
+            missingNumber.add(i)
+        }
+    }
+
+
+    println(missingNumber)
 
 
 }
 
+fun maxMin() {
+    val arr = listOf(1, 2, 3, 4, 5, 6, 7)
+    var sorted = arr.sorted()
+    var result = arrayListOf<Int>()
 
+    print(sorted)
+    var left = 0
+    var right = sorted.size - 1
+
+    while (left <= right) {
+        if (left != right) {
+            result.add(sorted[right--])
+            result.add(sorted[left++])
+        } else {
+            result.add(sorted[left])
+            left++
+        }
+    }
+
+    print(result)
+
+}
+
+fun countTheEachString() {
+    var str = "Helloo"
+    val mapIs = str.groupingBy { it }.eachCount()
+    println("mapIs $mapIs")
+}
+
+
+fun countTheString() {
+    val input: String = "aabbccddaaefccc"
+
+    var result = ""
+    var count = 1
+
+    for (i in 1..<input.length) {
+        if (input[i] == input[i - 1]) {
+            count++
+        } else {
+            result += input[i - 1] + count.toString()
+            count = 1
+        }
+    }
+
+    result += input[input.length - 1] + count.toString()
+    print("resultIs $result")
+}
 
 
 
